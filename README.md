@@ -1,10 +1,10 @@
-📽️ Banco de Dados - Sistema de Locadora de Filmes
+## 📽️ Banco de Dados - Sistema de Locadora de Filmes
 Este banco de dados foi desenvolvido para gerenciar as operações de uma locadora de filmes, incluindo cadastro de clientes, filmes, funcionários, e controle das locações.
 
-🧱 Estrutura do Banco de Dados
+## 🧱 Estrutura do Banco de Dados
 O banco de dados é composto por tabelas dimensionais (iniciadas com D_) e uma tabela de fato (F_locacao) que registra os eventos de locação.
 
-📁 Tabelas Dimensionais
+## 📁 Tabelas Dimensionais
 D_genero
 Armazena os gêneros dos filmes disponíveis.
 
@@ -12,14 +12,14 @@ Campo	Tipo	Descrição
 ID	int (PK)	Identificador único
 DESCRICAO	nvarchar(20)	Nome do gênero (ex: Ação, Drama)
 
-D_midia
+## D_midia
 Contém os tipos de mídia em que os filmes são disponibilizados (ex: DVD, Blu-Ray).
 
 Campo	Tipo	Descrição
 ID	int (PK)	Identificador único
 DESCRICAO	char(20)	Tipo de mídia
 
-D_filmes
+## D_filmes
 Cadastro dos filmes da locadora.
 
 Campo	Tipo	Descrição
@@ -28,7 +28,7 @@ DESCRICAO	char(50)	Título do filme
 GENERO	int (FK)	Referência para D_genero
 MIDIA	int (FK)	Referência para D_midia
 
-D_cliente
+## D_cliente
 Informações dos clientes da locadora.
 
 Campo	Tipo	Descrição
@@ -39,7 +39,7 @@ ENDERECO	char(100)	Endereço
 EMAIL	char(100)	E-mail
 DATA_NASC	date	Data de nascimento
 
-D_funcionario
+## D_funcionario
 Registra os funcionários da locadora.
 
 Campo	Tipo	Descrição
@@ -48,7 +48,7 @@ NOME	char(100)	Nome completo
 CARGO	char(30)	Cargo (ex: Atendente)
 DATA_NASC	date	Data de nascimento
 
-📦 Tabela de Fato
+## 📦 Tabela de Fato
 F_locacao
 Tabela que registra todas as locações feitas na locadora.
 
@@ -61,19 +61,19 @@ DATA_LOCACAO	date	Data da locação
 DATA_DEVOLUCAO	date	Data de devolução prevista/real
 VALOR	decimal(10,2)	Valor cobrado pela locação
 
-🔗 Relacionamentos
+## 🔗 Relacionamentos
 Um filme pertence a um gênero e a um tipo de mídia.
 
-Uma locação é feita por um cliente, intermediada por um funcionário, e envolve um filme específico.
+## Uma locação é feita por um cliente, intermediada por um funcionário, e envolve um filme específico.
 
-📌 Observações
+## 📌 Observações
 As tabelas seguem boas práticas de modelagem relacional.
 
 As chaves estrangeiras garantem a integridade referencial entre as entidades.
 
 A tabela de locação (F_locacao) centraliza as interações comerciais da locadora.
 
-🛠️ Tecnologias
+## 🛠️ Tecnologias
 Banco de Dados: MySQL
 
 Codificação: SQL padrão com adaptações para MySQL (ex: AUTO_INCREMENT)
